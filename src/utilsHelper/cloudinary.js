@@ -11,9 +11,8 @@ dotenv.config()
 cloudinary.config({ 
     cloud_name:  process.env.CLOUDINARY_NAME , 
     api_key: process.env.CLOUDINARY_API_KEY , 
-    api_secret:  process.env.CLOUDINARY_API_SECRET // Click 'View API Keys' above to copy your API secret
+    api_secret:  process.env.CLOUDINARY_API_SECRET 
 });
-
 
 const uploadOnCloudinary = async (localFilePath) =>{
     try {
@@ -35,13 +34,13 @@ const uploadOnCloudinary = async (localFilePath) =>{
 }
 
 
-const deleteFromCloudinary = async (publicID) =>{
+const deleteFromCloudinary = async (publicId) =>{
     try {
-       const result =  await cloudinary.uploader.destroy(publicID)
-       console.log("deleting on cloudinary" ,publicID ,result);
+       const result =  await cloudinary.uploader.destroy(publicId)
+       console.log("deleting on cloudinary publicId" ,publicId ,result);
        
     } catch (error) {
-       console.log("Error delete cloudinary" ,error);
+       console.log("Error deleting from cloudinary" ,error);
         return null
     }
 }

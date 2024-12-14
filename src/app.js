@@ -1,6 +1,7 @@
 import express from 'express'
 import Cors from 'cors'
 import CookieParser from 'cookie-parser'
+import {ApiError} from './utilsHelper/ApiError.js'
 
 
 const app = express()
@@ -24,9 +25,13 @@ app.use(CookieParser())
 import healgthCheck from './routers/healthCheck.routes.js'
 import UserRouter from './routers/user.routes.js'
 
+
+
 app.use('/api/v1/healthcheck' , healgthCheck)
 app.use('/api/v1/users' ,UserRouter)
 
-
+// app.post('/test', (req, res) => {
+//     throw new ApiError(400, "Testing error handling");
+// });
 
 export {app}
