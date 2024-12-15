@@ -31,6 +31,7 @@ import UserRouter from './routers/user.routes.js'
 app.use('/api/v1/healthcheck' , healgthCheck)
 app.use('/api/v1/users' ,UserRouter)
 
+
 // app.post('/test', (req, res) => {
 //     throw new ApiError(400, "Testing error handling");
 // });
